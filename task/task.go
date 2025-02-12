@@ -1,7 +1,7 @@
 package task
 
 import (
-	"fmt"
+	
 	"github.com/google/uuid"
 	"github.com/docker/go-connections/nat"
 	"time"
@@ -20,12 +20,12 @@ const (
 type Task struct {
 	ID uuid.UUID
 	Name string
-	State Stat
+	State State
 	Image string
 	Memory int
 	Disk int
 	ExposedPorts nat.PortSet
-	PortBindings map[string][string]
+	PortBindings map[string]string
 	RestartPolicy string
 	StartTime time.Time
 	FinishTime time.Time
@@ -38,6 +38,3 @@ type TaskEvent struct {
 	Task Task
 }
 
-func Task() {
-	fmt.Println("Task setup")
-}
